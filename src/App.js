@@ -4,6 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import Header from './components/Header.js';
 import SourcesView from './views/SourcesView.js';
 import ArticlesView from './views/ArticlesView.js';
+// import HomeView from './views/HomeView.js';
 
 
 const history = createHistory();
@@ -17,8 +18,10 @@ function App() {
     <Router history={history}>
       <div>
         <Header />
+
+        {/* <Route path="/" component={HomeView} />*/}
         <Route exact path="/" component={SourcesView} />
-        <Route path="/articles/:id" component={ArticlesView} />
+        <Route path="/articles/:id&:sort" component={ArticlesView} />
       </div>
     </Router>
   );
