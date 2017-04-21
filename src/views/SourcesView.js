@@ -72,10 +72,11 @@ class SourcesView extends Component {
             <Col xs="6" sm="4" className="tile">
               <Card block key={source.id}
                 className="bl" inverse color="info"
-                onClick={this.handleQueryValue.bind(this, source.href)}
+                onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
-                <CardText>{source.description}</CardText>
+                <CardText className="desc">{source.description}</CardText>
+                 <CardText className="category">{source.category}</CardText>
               </Card>
             </Col>
           ))}
