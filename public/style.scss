@@ -1,7 +1,7 @@
 .tile{
     
     .bl{
-        height:250px;
+        height:190px;
         margin:60px 30px 25px 30px;
     }
 }
@@ -96,4 +96,17 @@ div{
 .subtitle{
     font-size: 10px;
     font-style: italic;
+}
+
+.logobtn{
+    width: 250px;
+    margin:auto;
+}
+
+.desc{
+    font-size: 10px;   
+}
+
+.category{
+    text-transform: capitalize;
 }
