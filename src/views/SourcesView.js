@@ -17,13 +17,6 @@ class SourcesView extends Component {
     this._onChange = this._onChange.bind(this);
   }
 
-// Method to retrieve state from Stores
-  getItemsState() {
-    return {
-      sources: NewsSourcesStore.getAll(),
-    };
-  }
-
 // Get initial state from stores
   getInitialState() {
     return getItemsState();
@@ -43,6 +36,13 @@ class SourcesView extends Component {
 
   componentWillUnMount() {
     NewsSourcesStore.removeChangeListener(this._onChange);
+  }
+
+  // Method to retrieve state from Stores
+  getItemsState() {
+    return {
+      sources: NewsSourcesStore.getAll(),
+    };
   }
 
   updateSearch(event) {
