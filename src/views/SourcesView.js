@@ -75,15 +75,14 @@ class SourcesView extends Component {
                 block
 
                 className="bl" inverse color="info"
-                onClick={this.handleQueryValue.bind(this, source.href)}
+                onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
-<<<<<<< Updated upstream
-                <CardText>{source.description}</CardText>
-=======
+
                 <CardText className="desc">{source.description}</CardText>
                 <CardText className="category">{source.category}</CardText>
->>>>>>> Stashed changes
+
+
               </Card>
             </Col>
           ))}
