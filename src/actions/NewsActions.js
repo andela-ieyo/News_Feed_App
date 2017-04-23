@@ -7,6 +7,7 @@ import Api from '../utils/Api';
 
 
 const NewsActions = {
+
   getNews: (source) => {
     Api.resetQuery();
     Api.addQuery('source', source);
@@ -37,8 +38,9 @@ const NewsActions = {
       if (response.status === 200) {
         const body = response.data;
         const sources = body.sources;
-        sources.forEach((source) => {
-          dataFeatures.add(source.id, source.name, source.description);
+        sources.forEach((source, index) => {
+          dataFeatures.add(index, source.id, source.name, source.description,
+           source.category, source.sortBysAvailable);
         });
 
         NewsDispatcher.dispatch({

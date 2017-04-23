@@ -3,12 +3,15 @@ class SourcesContainer {
     this.sources = [];
   }
 
-  add(id, name, description) {
+  add(index, id, name, description, category, sortBysAvailable) {
     this.sources.push({
       href: `/articles/${id}`,
+      id: index,
       header: name,
       description,
+      category,
       title: name,
+      sortBysAvailable,
     });
   }
 
