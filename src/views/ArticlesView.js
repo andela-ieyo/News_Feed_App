@@ -30,14 +30,14 @@ class ArticlesView extends Component {
     NewsStore.removeChangeListener(this.onChange);
   }
 
+  onChange() {
+    this.setState({ allItems: NewsStore.getAll() });
+  }
+
   getItemsState() {
     return {
       allItems: NewsStore.getAll(),
     };
-  }
-
-  onChange() {
-    this.setState({ allItems: NewsStore.getAll() });
   }
 
 
@@ -109,7 +109,7 @@ class ArticlesView extends Component {
                   <div style={cssStyle} />
                   <CardBlock>
                     <CardText>{news.description}</CardText>
-                    <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>                                        
+                    <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
                   </CardBlock>
                 </Card>
               </Col>
