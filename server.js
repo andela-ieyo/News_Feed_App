@@ -1,14 +1,79 @@
-const express = require('express');
-const path = require('path');
-const port = process.env.PORT || 4000;
-const app = express();
+import path from 'path';
+import passport from 'passport';
+import express from 'express';
 
+require('dotenv').config();
+// console.log(process.env.GOOGLE_CLIENT_ID,
+//   process.env.GOOGLE_CLIENT_SECRET,
+//   process.env.CALLBACK_URL);
+const session = require('express-session');
+// import bodyParser from 'body-parser';
+
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+const port = process.env.PORT || 5000;
+const app = express();
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(session({
+  secret: 'keyboard cat',
+  key: 'user_sid',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { expires: 600000 },
+}));
 app.use(express.static('public'));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.CALLBACK_URL,
+},
+  (accessToken, refreshToken, profile, cb) =>
+    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      // process.nextTick(function () {
+     cb(null, profile)
+    // });
+    // return cb(null, profile);
+    // });
+  ,
+));
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    console.log('userinfo', req.user);
+    // Successful authentication, redirect home.
+    res.redirect('/home');
+  });
+
+app.get('/logout', (req, res) => {
+  req.logOut();
+  res.clearCookie('user_sid');
+  res.redirect('/');
+});
+
+app.get('/loggedin', (req, res) => {
+  console.log('check login', req.user);
+  res.end();
+});
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-app.listen(4000, () => {
-  console.log('Express server is up on port 4000');
+app.listen(port, () => {
+  console.log('Express server is up on port 5000');
 });
