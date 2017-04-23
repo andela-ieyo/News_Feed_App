@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
 import NewsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
 
@@ -19,14 +20,10 @@ class ArticlesView extends Component {
     return { allItems: null };
   }
 
-  componentWillMount() {
-    const { match } = this.props;
-  }
-
   componentDidMount() {
-    const { match } = this.props;
+    const { params } = this.props;
     NewsStore.addChangeListener(this.onChange);
-    NewsActions.getNews(match.params.id);
+    NewsActions.getNews(params.id);
   }
 
   componentWillUnmount() {
@@ -44,24 +41,24 @@ class ArticlesView extends Component {
   }
 
   handleSort(event) {
-    const { match } = this.props;
+    const { params } = this.props;
     event.preventDefault();
     const val = event.target.value;
-    NewsActions.getNews(`${match.params.id}&sortBy=${val}`);
+    NewsActions.getNews(`${params.id}&sortBy=${val}`);
   }
    /**
    * @return {object}
    */
 
   render() {
-    const { match } = this.props;
-    const sort = match.params.sort.split(',');
-    const option = sort.map(type => <option value={type} > {type} </option>);
+    const { params } = this.props;
+    const sort = params.sort.split(',');
+    const option = sort.map((type, index) => <option value={type} key={index}> {type} </option>);
     return (
       <div>
         <div>
           <div className="left">
-            <h1>{match.params.id}</h1>
+            <h1>{params.id}</h1>
           </div>
           <div className="right">
             <Form className="order">
@@ -83,7 +80,7 @@ class ArticlesView extends Component {
               height: '350px',
               background: `url(${news.image}) center center`,
               width: '100%',
-              'background-size': 'cover',
+              backgroundSize: 'cover',
             };
             return (
               <Col xs="3" sm="3" className="news-frame">
@@ -95,7 +92,7 @@ class ArticlesView extends Component {
                   <div style={cssStyle} />
                   <CardBlock>
                     <CardText>{news.description}</CardText>
-                    <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
+                    <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>                                        
                   </CardBlock>
                 </Card>
               </Col>
@@ -109,7 +106,7 @@ class ArticlesView extends Component {
 }
 
 ArticlesView.propTypes = {
-  match: PropTypes.routes,
+  params: PropTypes.object,
 };
 
 

@@ -1,46 +1,8 @@
 module.exports = {
- "extends": "airbnb",
- "parser": "babel-eslint",
- "env": {
-   "es6": true,
-   "mocha": true,
-   "node": true,
-   "browser": true
- },
- "plugins": [
-   "react",
-   "jsx-a11y",
-   "import"
- ],
- "rules": {
-   "import/no-extraneous-dependencies": ["error", {
-     "devDependencies": true,
-     "optionalDependencies": false,
-     "peerDependencies": false
-   }],
-   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
- },
- "settings": {
-   "import/parser": "babel-eslint",
-   "import/resolver":{
-     "webpack": {
-       "config": {
-         "resolve" : {
-           "modules": ["node_modules", "src"],
-           "extensions": [".js", ".json", ".jsx", ".css"]
-         }
-       }
-     }
-   }
- },
- "globals": {
-   "__DEVELOPMENT__": true,
-   "__CLIENT__": true,
-   "__SERVER__": true,
-   "__DISABLE_SSR__": true,
-   "__DEVTOOLS__": true,
-   "webpackIsomorphicTools": true,
-   "sinon": true
- }
-
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ]
 };
