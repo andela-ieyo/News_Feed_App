@@ -84,7 +84,6 @@ div{
     margin: 50px 0 90px 70px;
     .headline{
         height: 650px;
-
     }
 
 }
@@ -109,4 +108,57 @@ div{
 
 .category{
     text-transform: capitalize;
+}
+
+.home-view{
+    background-color: #222222;
+    height:800px;
+   
+}
+
+.tron{
+    background-color:  #000000;
+
+    .logobtn{
+        width: 160px;
+        height:30px;
+        background: url('./imgs/login-btn.jpg') center center;
+        background-size: cover;
+        background-color: #D94D38;
+        margin:50px 0 0 120px;
+    }
+
+    span{
+        color: #E6E6E7;
+        margin: 10px 0 0 300px;
+        font-size: 12px;
+    }
+}
+
+.sub-view{
+    margin: 130px 0px 80px 330px;
+    width: 600px;
+    background-color: #373C40;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.app-name{
+    color:#E6E6E7;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+       Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif";
+    margin:70px 50px 0 210px;
+    display:inline-block;
+}
+
+.l-right{
+    color: #E6E6E7;
+    p{
+        margin:35px 0 0 60px;
+        vertical-align: middle;
+    }
+}
+
+.home-link{
+    margin-right: 30px;
 }

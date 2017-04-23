@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { InputGroup, Input, Card, CardText, CardTitle, Row, Col } from 'reactstrap';
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
@@ -49,7 +50,7 @@ class SourcesView extends Component {
   }
 
   handleQueryValue(href) {
-    this.props.history.push(href);
+    browserHistory.push(href);
   }
 
   render() {
@@ -69,14 +70,19 @@ class SourcesView extends Component {
 
         <Row>
           {filteredSources.map(source => (
-            <Col xs="6" sm="4" className="tile">
-              <Card block key={source.id}
+            <Col xs="6" sm="4" className="tile" key={source.id}>
+              <Card
+                block
+
                 className="bl" inverse color="info"
                 onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
+
                 <CardText className="desc">{source.description}</CardText>
-                 <CardText className="category">{source.category}</CardText>
+                <CardText className="category">{source.category}</CardText>
+
+
               </Card>
             </Col>
           ))}
