@@ -3,11 +3,8 @@ import passport from 'passport';
 import express from 'express';
 
 require('dotenv').config();
-// console.log(process.env.GOOGLE_CLIENT_ID,
-//   process.env.GOOGLE_CLIENT_SECRET,
-//   process.env.CALLBACK_URL);
+
 const session = require('express-session');
-// import bodyParser from 'body-parser';
 
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
