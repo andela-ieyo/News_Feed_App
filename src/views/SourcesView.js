@@ -78,6 +78,7 @@ class SourcesView extends Component {
                 onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
+
                 <CardText className="desc">{source.description}</CardText>
                 <CardText className="category">{source.category}</CardText>
               </Card>

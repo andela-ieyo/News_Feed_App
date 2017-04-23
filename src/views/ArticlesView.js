@@ -40,6 +40,7 @@ class ArticlesView extends Component {
     this.setState({ allItems: NewsStore.getAll() });
   }
 
+
   handleSort(event) {
     const { params } = this.props;
     event.preventDefault();
@@ -75,12 +76,28 @@ class ArticlesView extends Component {
         <div className="clear" />
 
         <Row>
+          {this.state.allItems.map(news => (
+            <Col xs="3" sm="3" className="news-frame">
+              <Card className="headline">
+                <CardBlock>
+                  <CardTitle className="title">{news.meta}</CardTitle>
+                  <CardSubtitle className="subtitle">{news.header}</CardSubtitle>
+                </CardBlock>
+                <img width="100%" src={news.image} />
+                <CardBlock>
+                  <CardText>{news.description}</CardText>
+                  <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
+                </CardBlock>
+              </Card>
+            </Col>
+         ))}
           {this.state.allItems.map((news) => {
             const cssStyle = {
               height: '350px',
               background: `url(${news.image}) center center`,
               width: '100%',
               backgroundSize: 'cover',
+
             };
             return (
               <Col xs="3" sm="3" className="news-frame">
@@ -108,6 +125,5 @@ class ArticlesView extends Component {
 ArticlesView.propTypes = {
   params: PropTypes.object,
 };
-
 
 export default ArticlesView;
