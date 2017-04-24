@@ -79,11 +79,11 @@ class ArticlesView extends Component {
           {this.state.allItems.map(news => (
             <Col xs="3" sm="3" className="news-frame">
               <Card className="headline">
-                <CardBlock>
+                <img width="100%" src={news.image} />
+                <CardBlock className="news-title">
                   <CardTitle className="title">{news.meta}</CardTitle>
                   <CardSubtitle className="subtitle">{news.header}</CardSubtitle>
                 </CardBlock>
-                <img width="100%" src={news.image} />
                 <CardBlock>
                   <CardText>{news.description}</CardText>
                   <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>

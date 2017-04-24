@@ -35,7 +35,6 @@ const NewsSourcesStore = assign({}, EventEmitter.prototype, {
 
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
-
     case NewsActionTypes.GET_SOURCES:
       NewsSourcesStore.sources = payload.newItem;
       NewsSourcesStore.emitChange();

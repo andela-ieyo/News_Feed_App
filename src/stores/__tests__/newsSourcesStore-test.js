@@ -1,34 +1,45 @@
 import NewsSourcesStore from '../NewsSourcesStore';
 import NewsActionTypes from '../../constants/NewsActionTypes';
+import NewsDispatcher from '../../dispatcher/NewsDispatcher';
+
+jest.mock('../../dispatcher/NewsDispatcher');
 jest.dontMock('../NewsSourcesStore');
-jest.dontMock('../NewsStore');
 jest.dontMock('object-assign');
 
 
 describe('NewsSourcesStore', () => {
   // mock actions inside dispatch payloads
-  const actionTodoCreate = {
-    source: 'VIEW_ACTION',
-    action: {
-      actionType: TodoConstants.TODO_CREATE,
-      text: 'foo'
-    }
-  };
-  var actionTodoDestroy = {
-    source: 'VIEW_ACTION',
-    action: {
-      actionType: TodoConstants.TODO_DESTROY,
-      id: 'replace me in test'
-    }
+  const actionGET_SOURCES = {
+    eventName: NewsActionTypes.GET_SOURCES,
+    newItem: [{
+      id: 'abc-news-au',
+      name: 'ABC News (AU)'
+    }, {
+      id: 'al-jazeera-english',
+      name: 'Al Jazeera English'
+    }],
   };
 
-  var AppDispatcher;
-  var TodoStore;
-  var callback;
+  let callback;
 
+  beforeEach(() => {
+    callback = NewsDispatcher.register.mock.calls[0][0];
+  });
 
-  it('The store initializes with no data', () => {
+  test('registers a callback with the dispatcher', () => {
+    expect(NewsDispatcher.register.mock.calls.length).toBe(1);
+  });
+
+  test('The store initializes with no data', () => {
     const all = NewsSourcesStore.getAll().length; // This throws the error
     expect(all).toBe(0);
+  });
+
+  test('creates a to-do item', () => {
+    callback(actionGET_SOURCES);
+    const all = NewsSourcesStore.getAll();
+    const keys = Object.keys(all);
+    expect(keys.length).toBe(2);
+    expect(all[keys[0]].name).toEqual('ABC News (AU)');
   });
 });

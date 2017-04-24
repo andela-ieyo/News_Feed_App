@@ -20,8 +20,7 @@ app.use(session({
   cookie: { expires: 600000 },
 }));
 app.use(express.static('public'));
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });
@@ -36,13 +35,7 @@ passport.use(new GoogleStrategy({
   callbackURL: process.env.CALLBACK_URL,
 },
   (accessToken, refreshToken, profile, cb) =>
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      // process.nextTick(function () {
-     cb(null, profile)
-    // });
-    // return cb(null, profile);
-    // });
-  ,
+     cb(null, profile, accessToken)
 ));
 
 app.get('/auth/google',
@@ -63,7 +56,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/loggedin', (req, res) => {
-  console.log('check login', req.user);
+  console.log('check login', req.session.user);
   res.end();
 });
 
