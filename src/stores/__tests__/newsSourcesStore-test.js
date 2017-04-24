@@ -8,10 +8,16 @@ jest.dontMock('object-assign');
 
 
 describe('NewsSourcesStore', () => {
-   // mock actions inside dispatch payloads
+  // mock actions inside dispatch payloads
   const actionGET_SOURCES = {
-      eventName: NewsActionTypes.GET_SOURCES,
-      newItem: [{ id: 'abc-news-au', name: 'ABC News (AU)' }, { id: 'al-jazeera-english', name: 'Al Jazeera English' }],
+    eventName: NewsActionTypes.GET_SOURCES,
+    newItem: [{
+      id: 'abc-news-au',
+      name: 'ABC News (AU)'
+    }, {
+      id: 'al-jazeera-english',
+      name: 'Al Jazeera English'
+    }],
   };
 
   let callback;
@@ -37,4 +43,3 @@ describe('NewsSourcesStore', () => {
     expect(all[keys[0]].name).toEqual('ABC News (AU)');
   });
 });
-

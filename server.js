@@ -35,13 +35,7 @@ passport.use(new GoogleStrategy({
   callbackURL: process.env.CALLBACK_URL,
 },
   (accessToken, refreshToken, profile, cb) =>
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      // process.nextTick(function () {
      cb(null, profile, accessToken)
-    // });
-    // return cb(null, profile);
-    // });
-  ,
 ));
 
 app.get('/auth/google',
