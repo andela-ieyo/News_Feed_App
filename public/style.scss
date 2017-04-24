@@ -106,14 +106,15 @@ div{
 }
 
 .home-view{
-    background-color: #222222;
+    background: url('./imgs/homeview.jpg') center center;
+    background-size: cover;
     height:800px;
    
 }
 
 .tron{
-    background-color:  #000000;
-
+    background: url('./imgs/homeview.jpg') center center;
+    background-size: cover;    
     .logobtn{
         width: 160px;
         height:30px;
@@ -155,5 +156,27 @@ div{
 }
 
 .home-link{
-    margin-right: 30px;
+    margin-right: 70px;
+}
+
+.footer{
+    background-color: #010101;
+    width:100%;
+    height: 40px;
+    .footer-left{
+        float: left;
+        margin: 20px;
+        font-size:10px;
+        color:#9F9F9F;
+    }
+    .footer-right{
+        float:right;
+        margin:20px;
+        font-size: 10px;
+        color:#9F9F9F
+    }
+}
+
+.news-title{
+    height: 10px;
 }
