@@ -17,7 +17,7 @@ app.use(session({
   key: 'user_sid',
   resave: false,
   saveUninitialized: false,
-  cookie: { expires: 600000 },
+  cookie: { expires: 600000 }, //in milliseconds
 }));
 app.use(express.static('public'));
 
