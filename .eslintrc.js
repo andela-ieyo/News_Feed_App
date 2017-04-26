@@ -12,6 +12,7 @@ module.exports = {
   },
   "ecmaFeatures": {
     "arrowFunctions": true,
+    "jsx": true
   },
   "rules": {
     "no-param-reassign": 0,

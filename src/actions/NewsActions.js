@@ -11,7 +11,7 @@ const NewsActions = {
   getNews: (source) => {
     Api.resetQuery();
     Api.addQuery('source', source);
-    axios(Api.getLink()).then((response) => {
+    return axios.get(Api.getLink()).then((response) => {
       const feeds = new NewsContainer(); // initialize variable to news features
       const body = response.data;
       if (response.status === 200) {

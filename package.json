@@ -45,6 +45,7 @@
     "webpack": "^2.3.3"
   },
   "devDependencies": {
+    "coveralls": "^2.13.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",

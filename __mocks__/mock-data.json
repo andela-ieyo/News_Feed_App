@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "source": "bbcnews",
+    "sortBy": "top",
+    "articles": [{
+      "author": "BBC News",
+      "title": "General Election 2017: Labour to rip up Tory Brexit plan",
+      "description": "The party says it would prioritise jobs and workers' rights, and guarantee the status of EU citizens.",
+      "url": "http://www.bbc.co.uk/news/uk-politics-39698465",
+      "urlToImage": "https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/12509/production/_95771057_mediaitem95771056.jpg",
+      "publishedAt": "2017-04-25T06:32:28+00:00"
+    }, {
+      "author": "BBC News",
+      "title": "US submarine arrives in South Korea as tensions rise",
+      "description": "It comes amid worries of a North Korean missile test as Pyongyang marks its army's anniversary.",
+      "url": "http://www.bbc.co.uk/news/world-asia-39701481",
+      "urlToImage": "https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/95C1/production/_95773383_8d91ba22-dfe2-40fb-b189-54a95d1cdf13.jpg",
+      "publishedAt": "2017-04-25T02:59:53+00:00"
+    }, {
+      "author": "BBC News",
+      "title": "France elections: Le Pen steps aside as National Front leader",
+      "description": "Marine Le Pen says she will be above \"partisan considerations\" as she seeks the French presidency.",
+      "url": "http://www.bbc.co.uk/news/world-europe-39696861",
+      "urlToImage": "https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/1079E/production/_95768476_lepen.jpg",
+      "publishedAt": "2017-04-25T02:42:15+00:00"
+    }]
+  }
+}

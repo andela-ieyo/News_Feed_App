@@ -1,9 +1,9 @@
-import NewsSourcesStore from '../NewsSourcesStore';
-import NewsActionTypes from '../../constants/NewsActionTypes';
-import NewsDispatcher from '../../dispatcher/NewsDispatcher';
+import NewsSourcesStore from '../src/stores/NewsSourcesStore';
+import NewsActionTypes from '../src/constants/NewsActionTypes';
+import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
 
-jest.mock('../../dispatcher/NewsDispatcher');
-jest.dontMock('../NewsSourcesStore');
+jest.mock('../src/dispatcher/NewsDispatcher');
+jest.dontMock('../src/stores/NewsSourcesStore');
 jest.dontMock('object-assign');
 
 
