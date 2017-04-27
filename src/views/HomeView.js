@@ -1,13 +1,12 @@
 import { Button, Col, Row, Jumbotron } from 'reactstrap';
 import React from 'react';
-import '../../public/style.scss';
 
 
 function HomeView() {
   return (
     <div className="home-view">
       <Jumbotron className="tron">
-        <div className="sub-view">
+        <div className="sub-view" xs="6">
           <h1 className="app-name">News Feed</h1><br />
           <span>Sign in</span>
           <Row>

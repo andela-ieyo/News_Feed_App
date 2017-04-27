@@ -45,7 +45,7 @@ class ArticlesView extends Component {
     const { params } = this.props;
     event.preventDefault();
     const val = event.target.value;
-    NewsActions.getNews(`${params.id}&sortBy=${val}`);
+    NewsActions.getNews(params.id, val);
   }
    /**
    * @return {object}
@@ -76,27 +76,15 @@ class ArticlesView extends Component {
         <div className="clear" />
 
         <Row>
-          {this.state.allItems.map(news => (
-            <Col xs="3" sm="3" className="news-frame">
-              <Card className="headline">
-                <img width="100%" src={news.image} />
-                <CardBlock className="news-title">
-                  <CardTitle className="title">{news.meta}</CardTitle>
-                  <CardSubtitle className="subtitle">{news.header}</CardSubtitle>
-                </CardBlock>
-                <CardBlock>
-                  <CardText>{news.description}</CardText>
-                  <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
-                </CardBlock>
-              </Card>
-            </Col>
-         ))}
+         
           {this.state.allItems.map((news) => {
             const cssStyle = {
               height: '350px',
               background: `url(${news.image}) center center`,
               width: '100%',
               backgroundSize: 'cover',
+              borderTop: '#24AEDF 2px solid',
+              borderBottom: '#24AEDF 2px solid',
 
             };
             return (
