@@ -5,5 +5,4 @@ npm-debug.log
 .vscode/
 public/
 .env
-coverage/
-.coveralls.yml
+coverage
