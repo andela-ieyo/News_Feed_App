@@ -4,7 +4,7 @@
   "description": "A News Feed Application",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "webpack -p",
     "watch": "webpack --watch",
     "serve": "serve ./public",
