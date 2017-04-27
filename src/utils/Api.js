@@ -25,17 +25,17 @@ class Api {
     return this.link;
   }
 
-  makeApiCall() {
-    axios.get(this.getLink()).then((response) => {
-      if (response.status === 200) {
-        this.result = response.data;
-      }
-    })
-      .catch((error) => {
-        this.errorMessage = error;
-        console.log(this.errorMessage);
-      });
-  }
+  // makeApiCall() {
+  //   axios.get(this.getLink()).then((response) => {
+  //     if (response.status === 200) {
+  //       this.result = response.data;
+  //     }
+  //   })
+  //     .catch((error) => {
+  //       this.errorMessage = error;
+  //       console.log(this.errorMessage);
+  //     });
+  // }
 
 }
 

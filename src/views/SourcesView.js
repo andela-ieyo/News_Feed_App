@@ -3,7 +3,6 @@ import { browserHistory } from 'react-router';
 import { InputGroup, Input, Card, CardText, CardTitle, Row, Col } from 'reactstrap';
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
-import '../../public/style.scss';
 
 class SourcesView extends Component {
   constructor() {
@@ -74,7 +73,7 @@ class SourcesView extends Component {
               <Card
                 block
                 className="bl" inverse color="info"
-                onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
+                onClick={this.handleQueryValue.bind(this, `${source.href}/${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
 
