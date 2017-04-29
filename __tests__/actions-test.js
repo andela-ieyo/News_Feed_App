@@ -19,5 +19,7 @@ describe('#getNews() using Promises', () => {
       const arg = dispatchSpy.mock.calls[0][0];
       expect(dispatchSpy).toHaveBeenCalled();
       expect(arg.eventName).toEqual(NewsActionTypes.GET_NEWS);
+      expect(arg.news).toBeInstanceOf(Object);
+      expect(arg.news[0].meta).toEqual('BBC News');
     }));
 });
