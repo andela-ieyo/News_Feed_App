@@ -31,7 +31,7 @@ describe('NewsSourcesStore', () => {
   });
 
   test('The store initializes with no data', () => {
-    const all = NewsSourcesStore.getAll().length; // This throws the error
+    const all = NewsSourcesStore.getAll().length; 
     expect(all).toBe(0);
   });
 

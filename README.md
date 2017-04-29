@@ -27,35 +27,18 @@ News_Feed is expected to have a stable codebase ready for some production config
 
 Currently good for contributing, observing progress, and testing. We'd encourage due diligence in production usage, be very comfortable with the code, and risk tolerant. There are still many parts in development!
 
--   Master ( [stable](https://github.com/reactioncommerce/reaction/tree/master) )
--   Development ( [latest](https://github.com/reactioncommerce/reaction/tree/development) )
+-   Master ( [stable](https://github.com/andela-ieyo/News_Feed_App/tree/master) )
+-   Development ( [latest](https://github.com/andela-ieyo/News_Feed_App/tree/develop) )
 
 ## Participation
 
 If you are interested in participating in the development of News-Fedd, that's really great!
 
-
-### Contributing
-
-If you are planning on [contributing](https://guides.github.com/activities/contributing-to-open-source/#contributing) to Reaction, that's great. We welcome contributions to Reaction.
-
-Explore the GitHub issues already opened. If you find something you want to work on, let us know right there in the comments. If you are interested in a specific aspect of the [project](https://github.com/reactioncommerce/reaction/projects) but aren’t sure where to begin, feel free to ask. Start small and open up a dialogue with us. This will help to get your contributions accepted easily.
-
-If the contribution you wish to make isn't documented in an existing issue, please [create an issue](https://github.com/reactioncommerce/reaction/issues/new), before you submit a [Pull Request](https://help.github.com/articles/about-pull-requests/). This will allow the Reaction Maintainers and Collaborators a chance to give additional feedback as well.
-
-[Pull Requests](https://help.github.com/articles/about-pull-requests/) should
-
--   Have an associated issue
--   Have accepted the Contributor License Agreement
--   Enforce the [Reaction style guide](https://docs.reactioncommerce.com/reaction-docs/master/styleguide)
--   Pass both [Acceptance tests and Unit testing](https://docs.reactioncommerce.com/reaction-docs/master/testing-reaction).
-
-
 ### Testing
 
 Testing is an important way of participating as well. 
 
-Use `npm test` or `yest --coverage` to run local tests.
+Use `npm test` or `yest --coverage` or `jest --verbose` to run local tests.
 
 ### Deployment
 
