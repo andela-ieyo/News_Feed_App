@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from '../src/views/Footer'
+import Footer from '../src/views/Footer';
 jest.dontMock('../src/views/Footer');
 
 describe('Footer component', () => {
@@ -8,5 +8,5 @@ describe('Footer component', () => {
     const wrapper = shallow(<Footer />);
     expect(wrapper.contains('Designed by Eyo | All rights Reserved')).toBe(true);
     expect(wrapper.find('div')).toHaveLength(3);
-  })
-})
+  });
+});
