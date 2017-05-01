@@ -9,7 +9,16 @@ module.exports = {
       "jsx-a11y",
       "import"
     ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+    },
+    "ecmaFeatures": {
+      "jsx": true,
+      "arrowFunctions": true,
+    },
     "rules": {"one-var": 0,
+      "semi": [2, "always"],
       "no-constant-condition": 1,
       "one-var-declaration-per-line": 2,
       "new-cap": 0,
@@ -34,15 +43,10 @@ module.exports = {
       ],
       "require-jsdoc": ["error", {
         "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true
+          "FunctionDeclaration": false,
+          "MethodDefinition": false,
+          "ClassDeclaration": false
         }
       }],
-      "ecmaFeatures": {
-        "arrowFunctions": true,
-        "jsx": true
-      },
-
     }
 }

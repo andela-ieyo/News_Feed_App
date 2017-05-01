@@ -2,8 +2,7 @@ import { Button, Col, Row, Jumbotron } from 'reactstrap';
 import React from 'react';
 
 
-function HomeView() {
-  return (
+const HomeView = () => (
     <div className="home-view">
       <Jumbotron className="tron">
         <div className="sub-view" xs="6">
@@ -25,7 +24,6 @@ function HomeView() {
         </div>
       </Jumbotron>
     </div>
-  );
-}
+);
 
 export default HomeView;

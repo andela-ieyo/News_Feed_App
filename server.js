@@ -12,6 +12,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const port = process.env.PORT || 5000;
 
+const app = express();
+
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -22,15 +24,13 @@ passport.deserializeUser((obj, done) => {
 });
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.CALLBACK_URL,
-  },
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.CALLBACK_URL,
+},
   (accessToken, refreshToken, profile, cb) =>
   cb(null, profile)
 ));
-
-const app = express();
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -77,7 +77,7 @@ app.get('/loggedin', (req, res) => {
 });
 
 app.get('*', (req, res) => { // '*'
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'src', 'index.html'));
 });
 
 app.listen(port, () => {

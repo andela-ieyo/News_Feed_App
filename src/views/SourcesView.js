@@ -4,7 +4,12 @@ import { InputGroup, Input, Card, CardText, CardTitle, Row, Col } from 'reactstr
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
 
+/**
+  * @class
+  * @extends Component
+*/
 class SourcesView extends Component {
+/** @constructor */
   constructor() {
     super();
     this.state = {
@@ -17,10 +22,20 @@ class SourcesView extends Component {
   }
 
 // Get initial state from stores
+/**
+ * @function
+ * @returns {object} state
+ * @description calls getItemsState
+ * */
   getInitialState() {
     return getItemsState();
   }
 
+/**
+ * @function
+ * @returns {object} state
+ * @description update state
+ * */
   _onChange() {
     const itemState = this.getItemsState();
     this.setState({
