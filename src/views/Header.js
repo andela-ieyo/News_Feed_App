@@ -18,9 +18,9 @@ export default class Header extends Component {
     });
   }
   render() {
-    if (window.location.pathname === '/') {
-      return null; // do not show header content
-    }
+    // if (window.location.pathname === '/') {
+    //   return null; // do not show header content
+    // }
     return (
       <div>
         <div className="newsBar">

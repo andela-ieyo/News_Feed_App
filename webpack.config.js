@@ -1,6 +1,6 @@
 const path = require('path');
 const BUILD_PATH = path.resolve(__dirname, 'public');
-const APP_DIR = path.resolve(__dirname);
+const APP_DIR = `${path.resolve(__dirname)}/src`;
 
 module.exports = {
   devtool: 'cheap-eval-source-map',

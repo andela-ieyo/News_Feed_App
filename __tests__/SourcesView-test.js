@@ -11,4 +11,16 @@ describe('SourcesView Component', () => {
     wrapper.setProps({ search: 'latest' });
     expect(wrapper.props().search).toEqual('latest');
   });
-})
+
+  let component;
+
+  beforeEach(() => {
+    component = mount(<SourcesView />);
+  });
+
+  it('SourcesView renders Input', () => {
+    const input = component.find('input').first();
+    expect(input).toBeDefined();
+    expect(input.length).toEqual(1);
+  });
+});
