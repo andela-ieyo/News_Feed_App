@@ -1,5 +1,5 @@
 # News_Feed_App
-[![Coverage Status](https://coveralls.io/repos/github/andela-ieyo/News_Feed_App/badge.svg?branch=develop)](https://coveralls.io/github/andela-ieyo/News_Feed_App?branch=develop)
+[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_76.svg)](https://coveralls.io/github/andela-ieyo/News_Feed_App?branch=develop)
 
 News_Feed is a news feed application that provides headlines from over 60 news sources covring areas such as entertainment, politics, lifestyle, sports, arts, etc. Headlines can be sorted also based on top, latest , and popular news. 
 
