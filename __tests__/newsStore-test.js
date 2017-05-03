@@ -1,4 +1,4 @@
-import NewsStore from '../src/stores/NewsStore';
+import newsStore from '../src/stores/NewsStore';
 import NewsActionTypes from '../src/constants/NewsActionTypes';
 import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
 
@@ -31,13 +31,13 @@ describe('NewsStore', () => {
   });
 
   test('The store initializes with no data', () => {
-    const all = NewsStore.getAll().length; 
+    const all = newsStore.getAll().length;
     expect(all).toBe(0);
   });
 
   test('creates a to-do item', () => {
     callback(actionGET_NEWS);
-    const all = NewsStore.getAll();
+    const all = newsStore.getAll();
     const keys = Object.keys(all);
     expect(keys.length).toBe(2);
     expect(all[keys[0]].title).toEqual('General Election 2017: Labour to rip up Tory Brexit plan');

@@ -1,4 +1,4 @@
-import assign from 'object-assign';
+// import assign from 'object-assign';
 import { EventEmitter } from 'events';
 import NewsDispatcher from '../dispatcher/NewsDispatcher';
 import NewsActionTypes from '../constants/NewsActionTypes';
@@ -6,18 +6,20 @@ import NewsActionTypes from '../constants/NewsActionTypes';
 
 const CHANGE_EVENT = 'change';
 
-const NewsSourcesStore = assign({}, EventEmitter.prototype, {
-
-  sources: [],
+class NewsSourcesStore extends EventEmitter {
+  constructor() {
+    super();
+    this.sources = [];
+  }
 
 // Accessor method
   getAll() {
     return this.sources;
-  },
+  }
 
   emitChange() {
     this.emit(CHANGE_EVENT);
-  },
+  }
 
 /**
 * @param {function} callback
@@ -25,19 +27,19 @@ const NewsSourcesStore = assign({}, EventEmitter.prototype, {
 
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
-  },
+  }
 
   removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
-  },
-
-});
+  }
+}
+const newsSourcesStore = new NewsSourcesStore();
 
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
     case NewsActionTypes.GET_SOURCES:
-      NewsSourcesStore.sources = payload.newItem;
-      NewsSourcesStore.emitChange();
+      newsSourcesStore.sources = payload.newItem;
+      newsSourcesStore.emitChange();
       break;
 
     default:
@@ -45,4 +47,4 @@ NewsDispatcher.register((payload) => {
   }
 });
 
-export default NewsSourcesStore;
+export default newsSourcesStore;

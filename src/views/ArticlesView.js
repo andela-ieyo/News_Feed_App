@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import NewsStore from '../stores/NewsStore';
+import newsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
 
 
@@ -22,21 +22,21 @@ class ArticlesView extends Component {
 
   componentDidMount() {
     const { params } = this.props;
-    NewsStore.addChangeListener(this.onChange);
+    newsStore.addChangeListener(this.onChange);
     NewsActions.getNews(params.id);
   }
 
   componentWillUnmount() {
-    NewsStore.removeChangeListener(this.onChange);
+    newsStore.removeChangeListener(this.onChange);
   }
 
   onChange() {
-    this.setState({ allItems: NewsStore.getAll() });
+    this.setState({ allItems: newsStore.getAll() });
   }
 
   getItemsState() {
     return {
-      allItems: NewsStore.getAll(),
+      allItems: newsStore.getAll(),
     };
   }
 
@@ -110,8 +110,14 @@ class ArticlesView extends Component {
 
 }
 
+ArticlesView.defaultProps = {
+  params: {sort:'top'},
+  allItems: [],
+};
+
 ArticlesView.propTypes = {
   params: PropTypes.object,
 };
+
 
 export default ArticlesView;

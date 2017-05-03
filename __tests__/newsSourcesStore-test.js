@@ -1,4 +1,4 @@
-import NewsSourcesStore from '../src/stores/NewsSourcesStore';
+import newsSourcesStore from '../src/stores/NewsSourcesStore';
 import NewsActionTypes from '../src/constants/NewsActionTypes';
 import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
 
@@ -7,7 +7,7 @@ jest.dontMock('../src/stores/NewsSourcesStore');
 jest.dontMock('object-assign');
 
 
-describe('NewsSourcesStore', () => {
+describe('newsSourcesStore', () => {
   // mock actions inside dispatch payloads
   const actionGET_SOURCES = {
     eventName: NewsActionTypes.GET_SOURCES,
@@ -31,13 +31,13 @@ describe('NewsSourcesStore', () => {
   });
 
   test('The store initializes with no data', () => {
-    const all = NewsSourcesStore.getAll().length; 
+    const all = newsSourcesStore.getAll().length; 
     expect(all).toBe(0);
   });
 
   test('creates a to-do item', () => {
     callback(actionGET_SOURCES);
-    const all = NewsSourcesStore.getAll();
+    const all = newsSourcesStore.getAll();
     const keys = Object.keys(all);
     expect(keys.length).toBe(2);
     expect(all[keys[0]].name).toEqual('ABC News (AU)');
