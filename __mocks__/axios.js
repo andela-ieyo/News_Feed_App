@@ -1,9 +1,9 @@
 import testdata from './mock-data.json';
 
-const test = {
+const mockApiCall = {
   get() {
     return Promise.resolve(testdata);
   }
 };
 
-export default test;
+export default mockApiCall;

@@ -10,7 +10,6 @@ const NewsActions = {
 
   getNews: (id, val) => {
     const source = val ? `${id}&sortBy=${val}` : `${id}`;
-    console.log(source)
     Api.resetQuery();
     Api.addQuery('source', source);
     return axios.get(Api.getLink()).then((response) => {
