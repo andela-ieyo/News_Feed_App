@@ -1,4 +1,4 @@
-import mockedAxios from './../__mocks__/axios-mock';
+import mockedAxios from './../__mocks__/axios';
 import NewsActionTypes from '../src/constants/NewsActionTypes';
 import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
 import NewsActions from '../src/actions/NewsActions';
