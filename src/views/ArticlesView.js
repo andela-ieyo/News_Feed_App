@@ -53,8 +53,8 @@ class ArticlesView extends Component {
 
   render() {
     const { params } = this.props;
-    const sort = params.sort.split(',');
-    const option = sort.map((type, index) => <option value={type} key={index}> {type} </option>);
+    const sortOrder = params.sort.split(',');
+    const option = sortOrder.map((type, index) => <option value={type} key={index}> {type} </option>);
     return (
       <div>
         <div>
