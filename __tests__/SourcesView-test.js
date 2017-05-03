@@ -1,26 +1,39 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import SourcesView from '../src/views/SourcesView';
 
 jest.dontMock('../src/views/SourcesView');
 
 describe('SourcesView Component', () => {
-  it('allows us to set props', () => {
-    const wrapper = mount(<SourcesView sources={['bbc News', 'cnn news']} />);
-    expect(wrapper.props().sources).toEqual(['bbc News', 'cnn news']);
-    wrapper.setProps({ search: 'latest' });
-    expect(wrapper.props().search).toEqual('latest');
-  });
-
-  let component;
+  
+  let wrapper;
+  const sources= ['bbc News', 'cnn news'];
 
   beforeEach(() => {
-    component = mount(<SourcesView />);
+    wrapper = mount(<SourcesView />);
   });
 
+  it('allows us to set props', () => {
+    expect(wrapper.node.props.sources).toEqual([]);
+    expect(wrapper.node.props.search).toEqual('');
+
+    wrapper.setProps({ search: 'latest' });
+    expect(wrapper.node.props.search).toEqual('latest');
+
+    wrapper.setProps({ sources: sources });
+    expect(wrapper.node.props.sources).toEqual(sources);
+  });
+
+ 
+
   it('SourcesView renders Input', () => {
-    const input = component.find('input').first();
+    const input = wrapper.find('input').first();
     expect(input).toBeDefined();
     expect(input.length).toEqual(1);
   });
+
+  it('should render a node with className bl', () => {
+    const component = shallow(<SourcesView />);
+    expect(component.find(".bl").first()).toBeDefined();
+  })
 });

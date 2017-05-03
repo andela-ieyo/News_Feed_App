@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "A News Feed Application",
   "main": "server.js",
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom" : ["**/src/**.{js,jsx}", "!**/node_modules/**", 
+    "!**/vendor/**", "!**/src/configs/**", "!**/src/main.js", "!**/src/App.js"]
+  },
   "scripts": {
     "test": "jest --coverage",
     "build": "webpack -p",
@@ -31,6 +36,7 @@
     "history": "^4.6.1",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.4",
+    "morgan": "^1.8.1",
     "object-assign": "^4.1.1",
     "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",

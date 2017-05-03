@@ -18,9 +18,6 @@ export default class Header extends Component {
     });
   }
   render() {
-    // if (window.location.pathname === '/') {
-    //   return null; // do not show header content
-    // }
     return (
       <div>
         <div className="newsBar">
@@ -40,7 +37,7 @@ export default class Header extends Component {
           </Navbar>
         </div>
 
-        <div>
+        <div className="src-body">
           {this.props.children}
         </div>
       </div>

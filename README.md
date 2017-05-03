@@ -32,7 +32,7 @@ Currently good for contributing, observing progress, and testing. We'd encourage
 
 ## Participation
 
-If you are interested in participating in the development of News-Fedd, that's really great!
+If you are interested in participating in the development of News-Feed, that's really great!
 
 ### Testing
 

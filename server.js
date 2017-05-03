@@ -1,6 +1,7 @@
 import path from 'path';
 import passport from 'passport';
 import express from 'express';
+import morgan from 'morgan';
 
 require('dotenv').config();
 
@@ -31,6 +32,8 @@ passport.use(new GoogleStrategy({
   (accessToken, refreshToken, profile, cb) =>
   cb(null, profile)
 ));
+
+app.use(morgan('combined'));
 
 app.use(bodyParser.urlencoded({
   extended: false

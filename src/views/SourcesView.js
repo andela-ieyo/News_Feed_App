@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { browserHistory } from 'react-router';
-import { InputGroup, Input, Card, CardText, CardTitle, Row, Col } from 'reactstrap';
-import NewsSourcesStore from '../stores/NewsSourcesStore';
+import { InputGroup, Input, Card, CardText, CardTitle, Row, Col, Button } from 'reactstrap';
+import newsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
 
 /**
@@ -44,18 +45,18 @@ class SourcesView extends Component {
   }
 
   componentDidMount() {
-    NewsSourcesStore.addChangeListener(this._onChange);
+    newsSourcesStore.addChangeListener(this._onChange);
     NewsActions.getSources();
   }
 
   componentWillUnMount() {
-    NewsSourcesStore.removeChangeListener(this._onChange);
+    newsSourcesStore.removeChangeListener(this._onChange);
   }
 
   // Method to retrieve state from Stores
   getItemsState() {
     return {
-      sources: NewsSourcesStore.getAll(),
+      sources: newsSourcesStore.getAll(),
     };
   }
 
@@ -67,6 +68,7 @@ class SourcesView extends Component {
     browserHistory.push(href);
   }
 
+// render function
   render() {
     const filteredSources = this.state.sources.filter(source => source.title.toLowerCase()
     .indexOf(this.state.search.toLowerCase()) !== -1);
@@ -88,12 +90,17 @@ class SourcesView extends Component {
               <Card
                 block
                 className="bl" inverse color="info"
-                onClick={this.handleQueryValue.bind(this, `${source.href}/${source.sortBysAvailable}`)}
               >
                 <CardTitle>{source.title}</CardTitle>
 
                 <CardText className="desc">{source.description}</CardText>
-                <CardText className="category">{source.category}</CardText>
+                <div className="float-left">
+                <CardText className="category">{source.category}</CardText></div>
+                <div className="float-right">
+                 <Button className="Read" 
+                 onClick={this.handleQueryValue.bind(this, `${source.href}/${source.sortBysAvailable}`)}
+                 >Read</Button>
+                 </div>
               </Card>
             </Col>
           ))}
@@ -104,5 +111,14 @@ class SourcesView extends Component {
   }
 }
 
+SourcesView.defaultProps = {
+  sources: [],
+  search: '',
+};
+
+SourcesView.propTypes = {
+  sources: PropTypes.object,
+  search: PropTypes.string
+};
 
 export default SourcesView;
