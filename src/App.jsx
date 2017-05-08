@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import Header from './views/Header';
-import Footer from './views/Footer';
-import HomeView from './views/HomeView';
-import SourcesView from './views/SourcesView';
-import ArticlesView from './views/ArticlesView';
-import NotFound from './views/NotFound.js';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './components/Home.jsx';
+import NewsSources from './components/NewsSources.jsx';
+import NewsArticles from './components/NewsArticles.jsx';
+import NotFound from './components/NotFound.jsx';
 import axios from 'axios';
 
 
@@ -30,8 +30,7 @@ const onEnter = ({ location: { pathname }}, replace, callback) => {
     callback();
   })
   .catch(err => {
-    console.log(err);
-    callback();
+    throw err;
   });
 };
 
@@ -39,10 +38,10 @@ const App = () =>
    (
       <div>
         <Router history={browserHistory}>
-          <Route path="/" onEnter={onEnter} component={HomeView} />
+          <Route path="/" onEnter={onEnter} component={Home} />
            <Route component={Header}>
-             <Route path="/home" onEnter={onEnter} component={SourcesView} />
-             <Route path="/articles/:id/:sort" onEnter={onEnter} component={ArticlesView} />
+             <Route path="/home" onEnter={onEnter} component={NewsSources} />
+             <Route path="/articles/:id/:sort" onEnter={onEnter} component={NewsArticles} />
              <Route path="*" component={NotFound} />
            </Route>
          </Router>

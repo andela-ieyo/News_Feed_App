@@ -47,7 +47,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 600000
+    expires: false
   }, //in milliseconds
 }));
 
@@ -55,11 +55,18 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
+// Redirect the user to the OAuth 2.0 provider for authentication.  When
+// complete, the provider will redirect the user back to the application at
+//     /auth/provider/callback
 app.get('/auth/google',
   passport.authenticate('google', {
     scope: ['profile']
   }));
 
+// The OAuth 2.0 provider has redirected the user back to the application.
+// Finish the authentication process by attempting to obtain an access
+// token.  If authorization was granted, the user will be logged in.
+// Otherwise, authentication has failed.
 app.get('/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: '/'

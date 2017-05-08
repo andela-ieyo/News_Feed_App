@@ -1,4 +1,4 @@
-class SourcesContainer {
+class RefineSources {
   constructor() {
     this.sources = [];
   }
@@ -21,4 +21,4 @@ class SourcesContainer {
 
 }
 
-export default SourcesContainer;
+export default RefineSources;

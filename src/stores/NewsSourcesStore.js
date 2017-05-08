@@ -1,44 +1,76 @@
-// import assign from 'object-assign';
 import { EventEmitter } from 'events';
-import NewsDispatcher from '../dispatcher/NewsDispatcher';
+import appDispatcher from '../dispatcher/AppDispatcher';
 import NewsActionTypes from '../constants/NewsActionTypes';
 
 
 const CHANGE_EVENT = 'change';
 
+/**
+ * Represents Flux Store for sources component.
+ *
+ * @class NewsSourcesStore
+ * @extends {EventEmitter}
+ */
 class NewsSourcesStore extends EventEmitter {
+  /**
+   * Creates an instance of NewsSourcesStore.
+   *
+   * @memberof NewsSourcesStore
+   */
   constructor() {
     super();
     this.sources = [];
   }
 
-// Accessor method
+  /**
+   *
+   * @desc gets the value of the sources property
+   * @returns {object}
+   * @memberof NewsSourcesStore
+   */
   getAll() {
     return this.sources;
   }
 
+  /**
+   *
+   * @description notify the sources component of changes in state.
+   * @returns {void}
+   * @memberof NewsSourcesStore
+   */
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
 
-/**
-* @param {function} callback
-*/
-
+  /**
+   *
+   * @desc adds a listener that communicates state change to the sources component.
+   * @param {any} callback
+   * @returns {void}
+   * @memberof NewsSourcesStore
+   */
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
 
+  /**
+   *
+   * @desc removes the listener added by addChangeListener,
+   * terminates commincation with the sources componennt.
+   * @param {any} callback
+   * @returns {void}
+   * @memberof NewsSourcesStore
+   */
   removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
 }
 const newsSourcesStore = new NewsSourcesStore();
 
-NewsDispatcher.register((payload) => {
+appDispatcher.register((payload) => {
   switch (payload.eventName) {
     case NewsActionTypes.GET_SOURCES:
-      newsSourcesStore.sources = payload.newItem;
+      newsSourcesStore.sources = payload.sources;
       newsSourcesStore.emitChange();
       break;
 
