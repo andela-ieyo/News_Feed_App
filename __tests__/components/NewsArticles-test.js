@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ArticlesView from '../src/views/ArticlesView';
+import NewsArticles from '../../src/components/NewsArticles.jsx';
 
-jest.dontMock('../src/views/ArticlesView');
+jest.dontMock('../../src/components/NewsArticles.jsx');
 
-describe('ArticlesView Component', () => {
-  const allItems = 
+describe('NewsArticles Component', () => {
+  const articles = 
   {
     "status": "ok",
     "source": "techcrunch",
@@ -33,16 +33,16 @@ describe('ArticlesView Component', () => {
   let wrapper;
   
   beforeEach(() => {
-    wrapper = mount(<ArticlesView />);
+    wrapper = mount(<NewsArticles />);
   });
 
   it('allows us to set props', () => {
-    expect(wrapper.node.props.allItems).toEqual([]);
-    wrapper.setProps({ allItems: allItems });
-    expect(wrapper.node.props.allItems).toEqual(allItems);
+    expect(wrapper.node.props.articles).toEqual([]);
+    wrapper.setProps({ articles: articles });
+    expect(wrapper.node.props.articles).toEqual(articles);
   });
 
-  it('ArticlesView renders Input', () => {
+  it('renders Input', () => {
     const input = wrapper.find('.order').first();
     expect(input).toBeDefined();
     expect(input.length).toEqual(1);
@@ -52,4 +52,12 @@ describe('ArticlesView Component', () => {
     const newsCard = wrapper.find('.headline').first();
     expect(newsCard).toBeDefined();
   });
+
+  it('renders 3 news cards', () => {
+    const wrapper = mount(<NewsArticles articles={articles} />);
+    expect(wrapper.containsAnyMatchingElements([
+      <h4 className="title">{articles.author}</h4>,
+      <h6 className="subtitle">{articles.title}</h6>,
+    ])).toBeDefined();
+    })
 });

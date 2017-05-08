@@ -1,9 +1,9 @@
-import newsStore from '../src/stores/NewsStore';
-import NewsActionTypes from '../src/constants/NewsActionTypes';
-import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
+import newsStore from '../../src/stores/NewsStore';
+import NewsActionTypes from '../../src/constants/NewsActionTypes';
+import appDispatcher from '../../src/dispatcher/AppDispatcher';
 
-jest.mock('../src/dispatcher/NewsDispatcher');
-jest.dontMock('../src/stores/NewsStore');
+jest.mock('../../src/dispatcher/AppDispatcher');
+jest.dontMock('../../src/stores/NewsStore');
 jest.dontMock('object-assign');
 
 
@@ -23,11 +23,11 @@ describe('NewsStore', () => {
   let callback;
 
   beforeEach(() => {
-    callback = NewsDispatcher.register.mock.calls[0][0];
+    callback = appDispatcher.register.mock.calls[0][0];
   });
 
   test('registers a callback with the dispatcher', () => {
-    expect(NewsDispatcher.register.mock.calls.length).toBe(1);
+    expect(appDispatcher.register.mock.calls.length).toBe(1);
   });
 
   test('The store initializes with no data', () => {

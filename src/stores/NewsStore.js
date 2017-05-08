@@ -1,33 +1,67 @@
 import { EventEmitter } from 'events';
-import NewsDispatcher from '../dispatcher/NewsDispatcher';
+import appDispatcher from '../dispatcher/AppDispatcher';
 import NewsActionTypes from '../constants/NewsActionTypes';
 
 
 const CHANGE_EVENT = 'change';
 
+/**
+ *
+ * Represents Flux Store for news articles component.
+ * @class NewsStore
+ * @extends {EventEmitter}
+ */
 class NewsStore extends EventEmitter {
+  /**
+   * Creates an instance of NewsStore.
+   *
+   * @memberof NewsStore
+   */
   constructor() {
     super();
     this.news = [];
   }
 
-  // Accessor method
+  /**
+   * @returns {object}
+   * @desc gets the value of the news property
+   *
+   * @memberof NewsStore
+   */
   getAll() {
     return this.news;
   }
 
+  /**
+   *
+   * @description notify the news articles component of changes in state.
+   * @return {void}
+   * @memberof NewsStore
+   */
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
 
-/**
-* @param {function} callback
-*/
 
+  /**
+   *
+   * @desc adds a listener that communicates state change to the sources component.
+   * @param {any} callback
+   * @returns {void}
+   * @memberof NewsStore
+   */
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
 
+  /**
+   *
+   * @desc removes the listener added by addChangeListener,
+   * terminates commincation with the articles component.
+   * @param {any} callback
+   * @returns {void}
+   * @memberof NewsStore
+   */
   removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
@@ -36,7 +70,7 @@ class NewsStore extends EventEmitter {
 
 const newsStore = new NewsStore();
 
-NewsDispatcher.register((payload) => {
+appDispatcher.register((payload) => {
   switch (payload.eventName) {
 
     case NewsActionTypes.GET_NEWS:

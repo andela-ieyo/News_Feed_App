@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NotFound from '../src/views/NotFound';
-jest.dontMock('../src/views/NotFound');
+import NotFound from '../../src/components/NotFound.jsx';
+jest.dontMock('../../src/components/NotFound.jsx');
 
 describe('NotFound component', () => {
   it('NotFound component should render as expected', () => {

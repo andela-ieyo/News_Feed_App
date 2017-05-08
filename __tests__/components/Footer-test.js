@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from '../src/views/Footer';
-jest.dontMock('../src/views/Footer');
+import Footer from '../../src/components/Footer.jsx';
+jest.dontMock('../../src/components/Footer.jsx');
 
 describe('Footer component', () => {
   it('Footer component should render as expected', () => {

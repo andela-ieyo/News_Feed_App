@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Header from '../src/views/Header';
-jest.dontMock('../src/views/Header');
+import Header from '../../src/components/Header.jsx';
+jest.dontMock('../../src/components/Header.jsx');
 
 describe('Header component', () => {
   it('Header component should render as expected', () => {

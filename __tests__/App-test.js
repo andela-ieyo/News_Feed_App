@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
-import App from '../src/App';
-import Footer from '../src/views/Footer';
+import App from '../src/App.jsx';
+import Footer from '../src/components/Footer';
 
-jest.dontMock('../src/App');
+jest.dontMock('../src/App.jsx');
 
 describe('App Component', () => {
   it('Should contain the Router Component ', () => {
