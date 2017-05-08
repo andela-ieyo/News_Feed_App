@@ -1,9 +1,11 @@
+require('dotenv').config();
+const webpack = require('webpack');
 const path = require('path');
 const BUILD_PATH = path.resolve(__dirname, 'public');
 const APP_DIR = `${path.resolve(__dirname)}/src`;
-const DotEnvPlugin = require('dotenv-webpack');
-const dotEnvPlugin = new DotEnvPlugin({
-  path: './.env',
+
+const envsDefinePlugin = new webpack.DefinePlugin({
+  APIKEY: JSON.stringify(process.env.APIKEY)
 });
 
 module.exports = {
@@ -42,10 +44,7 @@ module.exports = {
     ],
   },
   plugins: [
-    dotEnvPlugin
-  ],
-  node: {
-    fs: 'empty'
-  }
+    envsDefinePlugin
+  ]
 };
 
