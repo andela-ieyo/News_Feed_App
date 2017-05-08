@@ -4,6 +4,7 @@
  [![Build Status](https://travis-ci.org/andela-ieyo/News_Feed_App.svg?branch=develop)](https://travis-ci.org/andela-ieyo/News_Feed_App) [![Code Climate](https://codeclimate.com/github/andela-ieyo/News_Feed_App/badges/gpa.svg)](https://codeclimate.com/github/andela-ieyo/News_Feed_App) [![Test Coverage](https://codeclimate.com/github/andela-ieyo/News_Feed_App/badges/coverage.svg)](https://codeclimate.com/github/andela-ieyo/News_Feed_App/coverage)
 
 
+
 ### What the project does
   **_Introduction/Background Information_**
 News_Feed is a news feed application that provides headlines from over 60 news sources covering areas such as entertainment, politics, lifestyle, sports, arts, etc. Headlines can be sorted also based on top, latest , and popular news. 
