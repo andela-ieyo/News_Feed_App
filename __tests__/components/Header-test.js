@@ -4,7 +4,7 @@ import Header from '../../src/components/Header.jsx';
 jest.dontMock('../../src/components/Header.jsx');
 
 describe('Header component', () => {
-  it('Header component should render as expected', () => {
+  it('should render as expected', () => {
     const wrapper = shallow(<Header />);
     expect(wrapper.contains('News Feed | Andela')).toBe(true);
     expect(wrapper.contains('Home')).toBe(true);

@@ -4,7 +4,7 @@ import NotFound from '../../src/components/NotFound.jsx';
 jest.dontMock('../../src/components/NotFound.jsx');
 
 describe('NotFound component', () => {
-  it('NotFound component should render as expected', () => {
+  it('should render as expected', () => {
     const wrapper = shallow(<NotFound />);
     expect(wrapper.contains('404: Page not found')).toBe(true);
     expect(wrapper.contains('We are sorry but the page you are looking for does not exist.')).toBe(true);

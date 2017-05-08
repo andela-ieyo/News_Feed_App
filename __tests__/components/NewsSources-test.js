@@ -26,7 +26,7 @@ describe('NewsSources Component', () => {
 
  
 
-  it('NewsSources renders Input', () => {
+  it('should render Input', () => {
     const input = wrapper.find('input').first();
     expect(input).toBeDefined();
     expect(input.length).toEqual(1);
