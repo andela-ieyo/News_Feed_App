@@ -22,8 +22,7 @@
     "watch": "webpack --watch",
     "serve": "serve ./public",
     "dev": "webpack -d --watch",
-    "start": "babel-node server.js",
-    "codeclimate": "CODECLIMATE_REPO_TOKEN=9e2c48436d84ae03d9d93d589eda223bf51fbb13411fbac50be9e06148fc5d13 codeclimate-test-reporter < ./coverage/lcov.info"
+    "start": "babel-node server.js"
   },
   "author": "Ifiok Eyo",
   "license": "MIT",

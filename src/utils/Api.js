@@ -10,7 +10,7 @@ class Api {
    * @memberof Api
    */
   constructor() {
-    this.apiKey = APIKEY;
+    this.apiKey = process.env.APIKEY;
     this.linkString = 'https://newsapi.org/v1/articles?';
     this.apilink = 'https://newsapi.org/v1/sources?language=en';
     this.link = this.linkString;
