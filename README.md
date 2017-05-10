@@ -71,3 +71,9 @@ If the contribution you wish to make isn't documented in an existing issue, plea
 ### License
 
 [MIT][license] © [andela-ieyo][author]
+
+<!-- Definitions -->
+
+[license]: LICENSE
+
+[author]: andela-ieyo
