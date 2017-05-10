@@ -43,7 +43,8 @@ class NewsSources extends Component {
 /**
  * @function
  * @returns {object} state
- * @description update sources state
+ * @description update sources state by listening for 
+ * change in the state of the sources store.
  * */
   onChange() {
     const SourcesState = this.getNewsSources();
@@ -77,7 +78,7 @@ class NewsSources extends Component {
   /**
    * 
    * @desc update state of search property
-   * @param {function} event 
+   * @param {function} event onchange event is passed as parameter 
    * 
    * @memberof NewsSources
    */
@@ -88,7 +89,7 @@ class NewsSources extends Component {
   /**
    * 
    * @desc passes sort parameter via route
-   * @param {string} href 
+   * @param {string} href news sources id and sorttype are passed as a string.
    * 
    * @memberof NewsSources
    */
@@ -154,10 +155,6 @@ const columnProps = PropTypes.oneOfType([
   PropTypes.bool,
   PropTypes.shape({
     size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
-    // example size values:
-    // 12 || "12" => col-12 or col-`width`-12
-    // auto => col-auto or col-`width`-auto
-    // true => col or col-`width`
     push: stringOrNumberProp,
     pull: stringOrNumberProp,
     offset: stringOrNumberProp

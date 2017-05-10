@@ -9,7 +9,7 @@ jest.dontMock('object-assign');
 
 describe('newsSourcesStore', () => {
   // mock actions inside dispatch payloads
-  const actionGET_SOURCES = {
+  const getSources = {
     eventName: NewsActionTypes.GET_SOURCES,
     sources: [{
       id: 'abc-news-au',
@@ -36,7 +36,7 @@ describe('newsSourcesStore', () => {
   });
 
   test('creates a to-do item', () => {
-    callback(actionGET_SOURCES);
+    callback(getSources);
     const all = newsSourcesStore.getAll();
     const keys = Object.keys(all);
     expect(keys.length).toBe(2);

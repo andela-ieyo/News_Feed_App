@@ -1,6 +1,6 @@
 # News_Feed_App
 [![Coverage Status](https://coveralls.io/repos/github/andela-ieyo/News_Feed_App/badge.png?branch=develop)](https://coveralls.io/github/andela-ieyo/News_Feed_App?branch=develop)
- [![Build Status](https://travis-ci.org/andela-ieyo/News_Feed_App.svg?branch=develop)](https://travis-ci.org/andela-ieyo/News_Feed_App) [![Code Climate](https://codeclimate.com/github/andela-ieyo/News_Feed_App/badges/gpa.svg)](https://codeclimate.com/github/andela-ieyo/News_Feed_App) [![Test Coverage](https://codeclimate.com/github/andela-ieyo/News_Feed_App/badges/coverage.svg)](https://codeclimate.com/github/andela-ieyo/News_Feed_App/coverage)
+ [![Build Status](https://travis-ci.org/andela-ieyo/News_Feed_App.svg?branch=develop)](https://travis-ci.org/andela-ieyo/News_Feed_App) [![Code Climate](https://codeclimate.com/github/andela-ieyo/News_Feed_App/badges/gpa.svg)](https://codeclimate.com/github/andela-ieyo/News_Feed_App) 
 
 
 
@@ -66,3 +66,14 @@ If the contribution you wish to make isn't documented in an existing issue, plea
 ### Deployment
 
  News Feed is hosted on heroku. Visit https://news-feed-app.herokuapp.com/
+ 
+ 
+### License
+
+[MIT][license] © [andela-ieyo][author]
+
+<!-- Definitions -->
+
+[license]: LICENSE
+
+[author]: andela-ieyo

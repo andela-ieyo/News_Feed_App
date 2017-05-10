@@ -9,7 +9,7 @@ jest.dontMock('object-assign');
 
 describe('NewsStore', () => {
   // mock actions inside dispatch payloads
-  const actionGET_NEWS = {
+  const getNews = {
     eventName: NewsActionTypes.GET_NEWS,
     news: [{
       title: 'General Election 2017: Labour to rip up Tory Brexit plan',
@@ -36,7 +36,7 @@ describe('NewsStore', () => {
   });
 
   test('creates a to-do item', () => {
-    callback(actionGET_NEWS);
+    callback(getNews);
     const all = newsStore.getAll();
     const keys = Object.keys(all);
     expect(keys.length).toBe(2);

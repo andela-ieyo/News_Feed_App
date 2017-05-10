@@ -46,7 +46,7 @@ class NewsStore extends EventEmitter {
   /**
    *
    * @desc adds a listener that communicates state change to the sources component.
-   * @param {any} callback
+   * @param {function} callback
    * @returns {void}
    * @memberof NewsStore
    */
@@ -58,7 +58,7 @@ class NewsStore extends EventEmitter {
    *
    * @desc removes the listener added by addChangeListener,
    * terminates commincation with the articles component.
-   * @param {any} callback
+   * @param {function} callback
    * @returns {void}
    * @memberof NewsStore
    */

@@ -3,11 +3,11 @@
  * @desc Contains parameters to extract from API data.
  * @class RefineNews
  */
-class RefineNews {
+class NewsAttributes {
   /**
    * Creates an instance of RefineNews.
    *
-   * @memberof RefineNews
+   * @memberof NewsAttributes
    */
   constructor() {
     this.news = [];
@@ -16,13 +16,13 @@ class RefineNews {
   /**
    * @desc extracts title, description, image-url, and address from news source.
    *
-   * @param {string} title
+   * @param {string} title  represents the news title
    * @param {string} description
    * @param {string} meta
    * @param {string} link
    * @param {string} image
    *
-   * @memberof RefineNews
+   * @memberof NewsAttributes
    */
   add(title, description, meta, link, image) {
     this.news.push({
