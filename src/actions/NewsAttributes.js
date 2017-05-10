@@ -1,11 +1,11 @@
 /**
  *
  * @desc Contains parameters to extract from API data.
- * @class RefineNews
+ * @class NewsAttributes
  */
 class NewsAttributes {
   /**
-   * Creates an instance of RefineNews.
+   * Creates an instance of NewsAttributes.
    *
    * @memberof NewsAttributes
    */
@@ -16,11 +16,11 @@ class NewsAttributes {
   /**
    * @desc extracts title, description, image-url, and address from news source.
    *
-   * @param {string} title  represents the news title
-   * @param {string} description
-   * @param {string} meta
-   * @param {string} link
-   * @param {string} image
+   * @param {string} title  represents the headline title
+   * @param {string} description  represents a brief description of headline.
+   * @param {string} meta  represents the name of the news source.
+   * @param {string} link   represents the url to the original article or news.
+   * @param {string} image  represents the url for the cover image of the headline.
    *
    * @memberof NewsAttributes
    */
@@ -39,7 +39,7 @@ class NewsAttributes {
    * @desc returns value of news property
    * @returns object
    *
-   * @memberof RefineNews
+   * @memberof NewsAttributes
    */
   get() {
     return this.news;
@@ -47,4 +47,4 @@ class NewsAttributes {
 
 
 }
-export default RefineNews;
+export default NewsAttributes;

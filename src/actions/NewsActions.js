@@ -1,8 +1,8 @@
 import axios from 'axios';
 import NewsActionTypes from '../constants/NewsActionTypes';
 import appDispatcher from '../dispatcher/AppDispatcher';
-import RefineSources from './RefineSources';
-import RefineNews from './RefineNews';
+import SourcesAttributes from './SourcesAttributes';
+import NewsAttributes from './NewsAttributes';
 import Api from '../utils/Api';
 
 
@@ -14,7 +14,7 @@ const NewsActions = {
 
     Api.addQuery('source', source);
     return axios.get(Api.getLink()).then((response) => {
-      const feeds = new RefineNews(); // initialize variable to news features
+      const feeds = new NewsAttributes(); // initialize variable to news features
       const body = response.data;
       if (response.status === 200) {
         const articles = body.articles;
@@ -35,7 +35,7 @@ const NewsActions = {
 
   getSources: () => {
     Api.resetQuery();
-    const sourcesAttributes = new RefineSources();
+    const sourcesAttributes = new SourcesAttributes();
 
     return axios.get(Api.apilink).then((response) => {
       if (response.status === 200) {
