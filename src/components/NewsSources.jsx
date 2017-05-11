@@ -33,7 +33,7 @@ class NewsSources extends Component {
 
 /**
  * @function
- * @returns {object} 
+ * @returns {object} array
  * @description calls getNewsSources
  * */
   getInitialSourcesState() {
@@ -42,7 +42,7 @@ class NewsSources extends Component {
 
 /**
  * @function
- * @returns {object} state
+ * @returns {object} array
  * @description update sources state by listening for 
  * change in the state of the sources store.
  * */
@@ -53,6 +53,13 @@ class NewsSources extends Component {
     });
   }
 
+  /**
+   * 
+   *  @desc represents a life cycle state of this component. 
+   * It updates the state of this component when it is rendered.
+   * 
+   * @memberof NewsSources
+   */
   componentDidMount() {
     newsSourcesStore.addChangeListener(this.onChange);
     NewsActions.getSources();
@@ -64,8 +71,10 @@ class NewsSources extends Component {
 
   /**
    * 
-   * @desc Get sources state from stores
-   * @returns object
+   * @desc links the state of the sources proprty of
+   *  this component to the state of the news sources store.
+   * 
+   * @returns {object} array of news sources
    * 
    * @memberof NewsSources
    */
@@ -78,7 +87,8 @@ class NewsSources extends Component {
   /**
    * 
    * @desc update state of search property
-   * @param {function} event onchange event is passed as parameter 
+   * @param {function} event represents the onchange event
+   *  that triggers change in user inpiut on the search bar.
    * 
    * @memberof NewsSources
    */

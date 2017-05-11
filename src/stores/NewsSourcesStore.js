@@ -45,7 +45,7 @@ class NewsSourcesStore extends EventEmitter {
   /**
    *
    * @desc adds a listener that communicates state change to the sources component.
-   * @param {any} callback
+   * @param {function} callback listens for state update request from the sources component.
    * @returns {void}
    * @memberof NewsSourcesStore
    */
@@ -56,8 +56,8 @@ class NewsSourcesStore extends EventEmitter {
   /**
    *
    * @desc removes the listener added by addChangeListener,
-   * terminates commincation with the sources componennt.
-   * @param {any} callback
+   * terminates commuincation with the sources componennt.
+   * @param {function} callback listens for request from the sources component to stop state update .
    * @returns {void}
    * @memberof NewsSourcesStore
    */

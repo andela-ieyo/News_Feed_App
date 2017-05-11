@@ -15,7 +15,7 @@ import NewsActions from '../actions/NewsActions';
 class NewsArticles extends Component {
 
   /**
-   * Creates an instance of NewsArticles.
+   * Creates an instance of NewsArticles with an articles property.
    * 
    * @memberof NewsArticles
    */
@@ -29,8 +29,8 @@ class NewsArticles extends Component {
 
   /**
    * 
-   * @desc calls getArticles()
-   * @returns object
+   * @desc calls getArticles method
+   * @returns {object} represents the value of the articles property
    * 
    * @memberof NewsArticles
    */
@@ -38,6 +38,13 @@ class NewsArticles extends Component {
     return getArticles();
   }
 
+  /**
+   * @desc represents a life cycle state of this component. 
+   * It updates the state of this component when it is rendered.
+   * 
+   * 
+   * @memberof NewsArticles
+   */
   componentDidMount() {
     const { params } = this.props;
     newsStore.addChangeListener(this.onChange);
@@ -49,8 +56,8 @@ class NewsArticles extends Component {
   }
 
   /**
-   * @desc changes the state of newsArticles
-   * 
+   * @desc changes the state of articles property by
+   *  listenening for change in the state of the news store.
    * 
    * @memberof NewsArticles
    */
@@ -60,8 +67,9 @@ class NewsArticles extends Component {
 
   /**
    * 
-   * 
-   * @returns object
+   * @desc links the state of the articles 
+   * property to the state of the news store
+   * @returns {object} array 
    * 
    * @memberof NewsArticles
    */
@@ -75,7 +83,8 @@ class NewsArticles extends Component {
   /**
    * @desc makes an api call to sort news articles
    * @return {void}
-   * @param {function} event 
+   * @param {function} event represents the onChange event that 
+   * triggers change in user input on the drop-down options.
    * 
    * @memberof NewsArticles
    */
