@@ -7,7 +7,6 @@ import { Link } from 'react-router';
 /**
  * represents Header component
  * 
- * @export
  * @class Header
  * @extends {Component}
  */
