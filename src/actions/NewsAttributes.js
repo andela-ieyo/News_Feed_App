@@ -5,7 +5,7 @@
  */
 class NewsAttributes {
   /**
-   * Creates an instance of NewsAttributes.
+   * Creates an instance of NewsAttributes with a news property.
    *
    * @memberof NewsAttributes
    */
@@ -15,7 +15,7 @@ class NewsAttributes {
 
   /**
    * @desc extracts title, description, image-url, and address from news source.
-   *
+   * @returns {void}
    * @param {string} title  represents the headline title
    * @param {string} description  represents a brief description of headline.
    * @param {string} meta  represents the name of the news source.
@@ -36,8 +36,8 @@ class NewsAttributes {
 
   /**
    *
-   * @desc returns value of news property
-   * @returns object
+   * @desc returns the value of news property
+   * @returns {object} array
    *
    * @memberof NewsAttributes
    */

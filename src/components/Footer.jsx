@@ -1,6 +1,11 @@
 import React from 'react';
 
 
+/**
+ * @desc represents the Footer component. A ststeless react component.
+ * 
+ * @returns a rendered div elements in the DOM
+ */
 function Footer() {
   return (
     <div className="footer">
